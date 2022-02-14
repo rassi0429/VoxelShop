@@ -1,0 +1,22 @@
+{
+  "name": "voxelshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "watch": "tsc-watch --onSuccess \"npx tsc-alias -p tsconfig.json\"",
+    "build": "tsc",
+    "run": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsc-watch": "^4.6.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "@types/uuid": "^8.3.4",
+    "typescript": "^4.5.5"
+  }
+}
