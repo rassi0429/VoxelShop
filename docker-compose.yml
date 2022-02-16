@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./dbvolume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=voxel
+      - MYSQL_USER=mariadb
+      - MYSQL_PASSWORD=password
+      - TZ=Asia/Tokyo
+  node:
+    build: .
+    init: true
+    restart: always
+    ports:
+      - "127.0.0.1:3015:3000"
