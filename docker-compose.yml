@@ -15,5 +15,9 @@ services:
     build: .
     init: true
     restart: always
+    environment:
+      - BZON_DECOMP_URL=
+      - NEOS_BOT_ID=
+      - NEOS_BOT_PASSWORD=
     ports:
       - "127.0.0.1:3015:3000"
