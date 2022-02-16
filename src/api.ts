@@ -4,7 +4,6 @@ import {DB} from "./db";
 import {Model} from "./db/model";
 
 const j2e = require("json2emap")
-
 const app = express()
 
 export class Api {

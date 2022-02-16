@@ -39,7 +39,7 @@ export class NeosBot {
       } else {
         const data = await JsonUtil.decompress7zbson(msg.assetUri)
         const itemData = new NeosJson(data)
-        await fs.writeFile("./test.json", JSON.stringify(data))
+        // await fs.writeFile("./test.json", JSON.stringify(data))
         // メッシュのURLと、マテリアルの色４つ、テクスチャ６個
         // 箱前面のユーザー名
         // 箱前面の写真URL
