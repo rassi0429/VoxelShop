@@ -15,7 +15,7 @@
     "axios": "^0.26.0",
     "deepdash": "^5.3.9",
     "express": "^4.17.2",
-    "json2emap": "github:rheniumNV/json2emap",
+    "json2emap": "github:rassi0429/json2emap",
     "lodash": "^4.17.21",
     "mysql": "^2.18.1",
     "tsc-watch": "^4.6.0",

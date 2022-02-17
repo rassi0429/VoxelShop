@@ -18,6 +18,7 @@ export class NeosBot {
   }
 
   async init() {
+    this.neos.Logout()
     this.neos.Login(process.env.NEOS_BOT_ID, process.env.NEOS_BOT_PASSWORD)
     this.neos.on("messageReceived", (msg: any) => this.messageReceived(msg))
     this.neos.on("friendAdded", (friend: any) => this.addFriend(friend))

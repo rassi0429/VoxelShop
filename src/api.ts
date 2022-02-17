@@ -2,8 +2,9 @@ import express from "express"
 import {Logger} from "./logger";
 import {DB} from "./db";
 import {Model} from "./db/model";
+import j2e from "json2emap"
 
-const j2e = require("json2emap")
+// const j2e = require("json2emap")
 const app = express()
 
 export class Api {
