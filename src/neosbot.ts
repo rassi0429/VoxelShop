@@ -73,10 +73,18 @@ export class NeosBot {
         const connection = DB.getConnection()
         const modelRepository = await connection.getRepository(Model)
         const newModel = new Model(objectName,staticMeshUrl,materialUrls,faceTextureUrl,colors)
-        await modelRepository.insert(newModel)
+        try {
+          await modelRepository.insert(newModel)
+        } catch {
+          this.neos.SendTextMessage(m.SenderId, "既に登録されているようです!")
+          return
+        }
 
         if (!objectName) {
           this.neos.SendTextMessage(m.SenderId, "アイテムが認識できませんでした。")
+          return
+        } else {
+          this.neos.SendTextMessage(m.SenderId, `${objectName}さんのVoxelModelが登録されました!`)
           return
         }
       }
