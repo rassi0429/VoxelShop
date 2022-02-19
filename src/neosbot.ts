@@ -14,7 +14,7 @@ export class NeosBot {
   constructor() {
     this.neos = new Neos()
     this.init()
-    setInterval(() => this.init(),10 * 60 * 1000)
+    // setInterval(() => this.init(),10 * 60 * 1000)
   }
 
   async init() {

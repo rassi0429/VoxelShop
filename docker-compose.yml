@@ -11,6 +11,8 @@ services:
       - MYSQL_USER=mariadb
       - MYSQL_PASSWORD=password
       - TZ=Asia/Tokyo
+    ports:
+      - "127.0.0.1:3336:3016"
   node:
     build: .
     init: true
