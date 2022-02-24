@@ -15,7 +15,7 @@ export class DB {
       synchronize: true,
       entities: [Model]
     }
-
+  console.log(options)
     DB.connection = await createConnection(options)
   }
 

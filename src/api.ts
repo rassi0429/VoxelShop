@@ -26,14 +26,20 @@ export class Api {
           if (userModel) sessionModels.push(userModel)
         }
       }
-      const models = await repository.find({
-        order: {id: "DESC"},
-        take: (Number(req.query.limit) || 10) - sessionModels.length
-      })
-      const fmodels = [...sessionModels,...models].map((m) => formatModel(m))
+      const take = (Number(req.query.limit) || 10) - sessionModels.length
+      const models = await repository.find({})
+      const shuffleModels = shuffle(models).splice(0,take)
+      const fmodels = [...sessionModels,...shuffleModels].map((m) => formatModel(m))
       res.send(req.query.json ? fmodels : j2e(fmodels))
     })
   }
+}
+function shuffle ([...array]) {
+  for (let i = array.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function formatModel(model: Model) {
